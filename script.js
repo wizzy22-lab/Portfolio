@@ -5,26 +5,23 @@
 /* ===========================
    LANGUAGE TOGGLE
    =========================== */
-const langBtns = document.querySelectorAll('.lang-btn');
+const langBtns = document.querySelectorAll('.lang-pill-btn');
 let currentLang = localStorage.getItem('haeji-lang') || 'en';
 
 function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('haeji-lang', lang);
 
-  // Update all translatable text nodes (exclude typing element)
   document.querySelectorAll('[data-en]').forEach(el => {
     if (el.id === 'typingEl' || el.id === 'toastMsg') return;
     const text = el.dataset[lang] || el.dataset.en;
     if (text) el.textContent = text;
   });
 
-  // Sync all lang-btn active states
-  document.querySelectorAll('.lang-btn').forEach(btn => {
+  document.querySelectorAll('.lang-pill-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 
-  // Restart typing animation in new language
   restartTyping();
 }
 
@@ -32,7 +29,6 @@ langBtns.forEach(btn => {
   btn.addEventListener('click', () => applyLang(btn.dataset.lang));
 });
 
-// Apply on load
 applyLang(currentLang);
 
 
@@ -110,7 +106,6 @@ hamburger.addEventListener('click', () => {
   hamburger.setAttribute('aria-expanded', isOpen);
 });
 
-// Close on nav link click
 mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
@@ -148,7 +143,6 @@ const fadeTargets = document.querySelectorAll('.fade-in, .section-fade');
 const fadeObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
-    // Stagger siblings inside the same parent
     const siblings = Array.from(
       entry.target.parentElement.querySelectorAll('.fade-in, .section-fade')
     );
@@ -164,31 +158,105 @@ fadeTargets.forEach(el => fadeObserver.observe(el));
 
 
 /* ===========================
-   MARQUEE — CLONE CARDS
+   PROJECTS — ACCORDION
    =========================== */
-const marqueeTrack = document.getElementById('marqueeTrack');
+const accItems = document.querySelectorAll('.acc-item');
 
-if (marqueeTrack) {
-  const originalCards = Array.from(marqueeTrack.querySelectorAll('.project-card'));
-  originalCards.forEach(card => {
-    const clone = card.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    marqueeTrack.appendChild(clone);
+accItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    accItems.forEach(i => i.classList.remove('open'));
+    item.classList.add('open');
   });
+});
+
+
+/* ===========================
+   TIMELINE — SVG WAVY LINE DRAWING
+   =========================== */
+const timelineEl  = document.querySelector('.timeline');
+const pathEl      = document.getElementById('timelinePath');
+
+function buildWavePath(totalHeight, amplitude, wavelength) {
+  const amp = amplitude || 10;
+  const wl  = wavelength || 80;
+  const cx  = 13;
+  const points = [];
+  for (let y = 0; y <= totalHeight; y += 4) {
+    const x = cx + Math.sin((y / wl) * Math.PI * 2) * amp;
+    points.push(`${x},${y}`);
+  }
+  return 'M ' + points.join(' L ');
 }
+
+function initWavePath() {
+  if (!timelineEl || !pathEl) return;
+  const h = timelineEl.offsetHeight;
+  pathEl.setAttribute('d', buildWavePath(h));
+  const len = pathEl.getTotalLength();
+  pathEl.style.strokeDasharray  = len;
+  pathEl.style.strokeDashoffset = len;
+}
+
+function updateWavePath() {
+  if (!timelineEl || !pathEl) return;
+  const rect    = timelineEl.getBoundingClientRect();
+  const total   = timelineEl.offsetHeight;
+  const scrolled = Math.max(0, -rect.top + window.innerHeight * 0.6);
+  const pct     = Math.min(scrolled / total, 1);
+  const len     = parseFloat(pathEl.style.strokeDasharray) || pathEl.getTotalLength();
+  pathEl.style.strokeDashoffset = len * (1 - pct);
+}
+
+window.addEventListener('load', initWavePath);
+window.addEventListener('resize', initWavePath);
+window.addEventListener('scroll', updateWavePath, { passive: true });
+
+
+/* ===========================
+   ABOUT — STAT COUNTER
+   =========================== */
+const statNums = document.querySelectorAll('.stat-num[data-target]');
+let counterDone = false;
+
+function animateCounter(el, target, duration) {
+  const start = performance.now();
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const current = Math.floor(eased * target);
+    el.textContent = current + '+';
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !counterDone) {
+      counterDone = true;
+      statNums.forEach(el => {
+        const target = parseInt(el.dataset.target, 10);
+        animateCounter(el, target, 1200);
+      });
+    }
+  });
+}, { threshold: 0.5 });
+
+const statsSection = document.querySelector('.about-stats');
+if (statsSection) statsObserver.observe(statsSection);
 
 
 /* ===========================
    TOAST — MESSAGE CLICK
    =========================== */
 const messageLink = document.getElementById('messageLink');
-const toast = document.getElementById('toast');
-const toastMsg = document.getElementById('toastMsg');
-let toastTimer = null;
+const toast       = document.getElementById('toast');
+const toastMsg    = document.getElementById('toastMsg');
+let toastTimer    = null;
 
 if (messageLink && toast && toastMsg) {
   messageLink.addEventListener('click', () => {
-    // Show message in current language
     toastMsg.textContent =
       toastMsg.dataset[currentLang] || toastMsg.dataset.en;
 
