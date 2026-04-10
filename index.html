@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haeji Wi — Product Designer</title>
+  <meta name="description" content="Haeji Wi — Product Designer & Brand Experience Lead" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Haeji Wi<span class="dot">.</span></a>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about"    data-en="About"    data-ko="소개">About</a></li>
+          <li><a href="#skills"   data-en="Skills"   data-ko="스킬">Skills</a></li>
+          <li><a href="#projects" data-en="Projects" data-ko="프로젝트">Projects</a></li>
+          <li><a href="#resume"   data-en="Resume"   data-ko="이력">Resume</a></li>
+        </ul>
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="ko">KO</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about"    data-en="About"    data-ko="소개">About</a>
+      <a href="#skills"   data-en="Skills"   data-ko="스킬">Skills</a>
+      <a href="#projects" data-en="Projects" data-ko="프로젝트">Projects</a>
+      <a href="#resume"   data-en="Resume"   data-ko="이력">Resume</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="ko">KO</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <!-- Text column -->
+        <div class="hero-content">
+          <p class="hero-greeting fade-in" data-en="Hi, I'm" data-ko="안녕하세요,">Hi, I'm</p>
+          <h1 class="hero-name fade-in">Haeji Wi</h1>
+          <div class="hero-typing-wrap fade-in">
+            <span class="hero-typing" id="typingEl"></span><span class="cursor">|</span>
+          </div>
+          <p class="hero-sub fade-in"
+             data-en="Designing experiences that connect people to what matters."
+             data-ko="사람과 가치를 잇는 경험을 디자인합니다.">
+            Designing experiences that connect people to what matters.
+          </p>
+          <div class="hero-cta fade-in">
+            <a href="#projects" class="btn btn-primary" data-en="View My Work" data-ko="프로젝트 보기">View My Work</a>
+            <!-- TODO: PDF 파일 경로 교체 (href="#" → href="resume.pdf") -->
+            <a href="#" class="btn btn-outline" data-en="Download Resume" data-ko="이력서 다운로드">Download Resume</a>
+          </div>
+        </div>
+        <!-- Image column — TODO: 사진 교체 → <img src="your-hero-photo.jpg" alt="Haeji Wi" /> -->
+        <div class="hero-img-box fade-in" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text section-fade">
+          <span class="section-label" data-en="About Me" data-ko="소개">About Me</span>
+          <h2 class="section-title"
+              data-en="designing decision-driven experiences grounded in real-world operations."
+              data-ko="실제 운영 경험에 기반한, 의사결정 중심의 경험을 디자인합니다.">
+            designing decision-driven experiences grounded in real-world operations.
+          </h2>
+          <p class="about-body"
+             data-en="I'm a product designer with a background that stretches from the kitchen to the boardroom. My work is rooted in empathy, shaped by hands-on operations, and driven by a belief that good design should make real decisions easier."
+             data-ko="주방에서 사업 현장까지, 다양한 실무 경험을 바탕으로 공감에서 출발하고 실제 운영에 뿌리를 둔 디자인을 합니다. 좋은 디자인은 더 나은 의사결정을 돕는다고 믿습니다.">
+            I'm a product designer with a background that stretches from the kitchen to the boardroom. My work is rooted in empathy, shaped by hands-on operations, and driven by a belief that good design should make real decisions easier.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label" data-en="Years" data-ko="년 경력">Years</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">30+</span>
+              <span class="stat-label" data-en="Projects" data-ko="프로젝트">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">10+</span>
+              <span class="stat-label" data-en="Brands" data-ko="브랜드">Brands</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image section-fade">
+          <!-- TODO: 사진 교체 — <img src="your-photo.jpg" alt="Haeji Wi" /> -->
+          <div class="photo-placeholder" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-fade">
+        <span class="section-label" data-en="What I Bring" data-ko="역량">What I Bring</span>
+        <h2 class="section-title" data-en="Skills &amp; Tools" data-ko="스킬 &amp; 도구">Skills &amp; Tools</h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category section-fade">
+          <h3 class="skill-cat-title" data-en="UX Design" data-ko="UX 디자인">UX Design</h3>
+          <div class="badges">
+            <span class="badge" data-en="Interaction"    data-ko="인터랙션">Interaction</span>
+            <span class="badge" data-en="IA"             data-ko="정보 구조">IA</span>
+            <span class="badge" data-en="Prototyping"    data-ko="프로토타이핑">Prototyping</span>
+            <span class="badge" data-en="Usability Test" data-ko="사용성 테스트">Usability Test</span>
+          </div>
+        </div>
+
+        <div class="skill-category section-fade">
+          <h3 class="skill-cat-title" data-en="Strategy &amp; Research" data-ko="전략 &amp; 리서치">Strategy &amp; Research</h3>
+          <div class="badges">
+            <span class="badge" data-en="User Research"      data-ko="사용자 리서치">User Research</span>
+            <span class="badge" data-en="Problem Definition" data-ko="문제 정의">Problem Definition</span>
+            <span class="badge" data-en="Insight Synthesis"  data-ko="인사이트 종합">Insight Synthesis</span>
+          </div>
+        </div>
+
+        <div class="skill-category section-fade">
+          <h3 class="skill-cat-title" data-en="Brand &amp; Business" data-ko="브랜드 &amp; 비즈니스">Brand &amp; Business</h3>
+          <div class="badges">
+            <span class="badge" data-en="Brand Strategy"             data-ko="브랜드 전략">Brand Strategy</span>
+            <span class="badge" data-en="Experience Design"          data-ko="경험 디자인">Experience Design</span>
+            <span class="badge" data-en="Small Business Operations"  data-ko="소규모 사업 운영">Small Business Operations</span>
+          </div>
+        </div>
+
+        <div class="skill-category section-fade">
+          <h3 class="skill-cat-title" data-en="Tools" data-ko="도구">Tools</h3>
+          <div class="badges">
+            <span class="badge">Figma</span>
+            <span class="badge">Claude</span>
+            <span class="badge">Notion</span>
+            <span class="badge">Gemini</span>
+            <span class="badge">ChatGPT</span>
+          </div>
+        </div>
+
+        <div class="skill-category skill-category--special section-fade">
+          <h3 class="skill-cat-title" data-en="Craft &amp; Background" data-ko="배경 &amp; 경험">Craft &amp; Background</h3>
+          <div class="badges">
+            <span class="badge" data-en="Pastry Chef (4 years)"         data-ko="파티시에 (4년)">Pastry Chef (4 years)</span>
+            <span class="badge" data-en="10+ years baking experience"   data-ko="베이킹 10년 이상">10+ years baking experience</span>
+          </div>
+        </div>
+
+        <div class="skill-category skill-category--special section-fade">
+          <h3 class="skill-cat-title" data-en="Certifications" data-ko="자격증">Certifications</h3>
+          <div class="badges">
+            <span class="badge" data-en="Licensed 3rd Class Navigator"       data-ko="3급 항해사 면허">Licensed 3rd Class Navigator</span>
+            <span class="badge" data-en="Certified Medical Care Administrator" data-ko="의료행정사 자격증">Certified Medical Care Administrator</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="projects">
+    <div class="container section-fade">
+      <span class="section-label" data-en="What I've been working on" data-ko="작업물">What I've been working on</span>
+      <h2 class="section-title" data-en="Projects" data-ko="프로젝트">Projects</h2>
+    </div>
+
+    <div class="marquee-wrapper">
+      <div class="marquee-track" id="marqueeTrack">
+
+        <!-- Card 1: Operator -->
+        <div class="project-card">
+          <!-- TODO: Operator 프로젝트 이미지 교체 -->
+          <div class="card-thumb"></div>
+          <div class="card-body">
+            <span class="card-tag" data-en="Product Design" data-ko="프로덕트 디자인">Product Design</span>
+            <h3 class="card-title">Operator</h3>
+            <p class="card-desc"
+               data-en="A case study on operator-focused product design. Replace with your actual project description."
+               data-ko="운영자 중심 프로덕트 디자인 케이스 스터디입니다. 실제 내용으로 교체해주세요.">
+              A case study on operator-focused product design. Replace with your actual project description.
+            </p>
+            <!-- TODO: Operator 링크 교체 -->
+            <a href="#" class="card-link" data-en="View Case Study →" data-ko="케이스 스터디 보기 →">View Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Bing-X Redesign -->
+        <div class="project-card">
+          <!-- TODO: Bing-X 프로젝트 이미지 교체 -->
+          <div class="card-thumb"></div>
+          <div class="card-body">
+            <span class="card-tag" data-en="Redesign" data-ko="리디자인">Redesign</span>
+            <h3 class="card-title">Bing-X Redesign</h3>
+            <p class="card-desc"
+               data-en="A comprehensive UX redesign of the Bing-X platform. Replace with your actual project description."
+               data-ko="Bing-X 플랫폼의 종합적인 UX 리디자인입니다. 실제 내용으로 교체해주세요.">
+              A comprehensive UX redesign of the Bing-X platform. Replace with your actual project description.
+            </p>
+            <!-- TODO: Bing-X 링크 교체 -->
+            <a href="#" class="card-link" data-en="View Case Study →" data-ko="케이스 스터디 보기 →">View Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Wizzy Bakeshop -->
+        <div class="project-card">
+          <!-- TODO: Wizzy Bakeshop 이미지 교체 -->
+          <div class="card-thumb"></div>
+          <div class="card-body">
+            <span class="card-tag" data-en="Brand &amp; Experience" data-ko="브랜드 &amp; 경험">Brand &amp; Experience</span>
+            <h3 class="card-title">Wizzy Bakeshop</h3>
+            <p class="card-desc"
+               data-en="Brand identity and customer experience design for Wizzy Bakeshop. Replace with your actual project description."
+               data-ko="Wizzy Bakeshop의 브랜드 아이덴티티와 고객 경험 디자인입니다. 실제 내용으로 교체해주세요.">
+              Brand identity and customer experience design for Wizzy Bakeshop. Replace with your actual project description.
+            </p>
+            <!-- TODO: Wizzy Bakeshop 링크 교체 -->
+            <a href="#" class="card-link" data-en="View Case Study →" data-ko="케이스 스터디 보기 →">View Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 4: Weekend Greenwich -->
+        <div class="project-card">
+          <!-- TODO: Weekend Greenwich 이미지 교체 -->
+          <div class="card-thumb"></div>
+          <div class="card-body">
+            <span class="card-tag" data-en="Experience Design" data-ko="경험 디자인">Experience Design</span>
+            <h3 class="card-title">Weekend Greenwich</h3>
+            <p class="card-desc"
+               data-en="Experience design for Weekend Greenwich. Replace with your actual project description."
+               data-ko="Weekend Greenwich 경험 디자인입니다. 실제 내용으로 교체해주세요.">
+              Experience design for Weekend Greenwich. Replace with your actual project description.
+            </p>
+            <!-- TODO: Weekend Greenwich 링크 교체 -->
+            <a href="#" class="card-link" data-en="View Case Study →" data-ko="케이스 스터디 보기 →">View Case Study →</a>
+          </div>
+        </div>
+
+      </div><!-- /.marquee-track -->
+    </div><!-- /.marquee-wrapper -->
+  </section>
+
+  <!-- ===== RESUME ===== -->
+  <section id="resume" class="resume">
+    <div class="container">
+      <div class="resume-header section-fade">
+        <div>
+          <span class="section-label" data-en="My Journey" data-ko="나의 여정">My Journey</span>
+          <h2 class="section-title" data-en="Resume" data-ko="이력">Resume</h2>
+        </div>
+        <!-- TODO: PDF 파일 경로 교체 (href="#" → href="resume.pdf") -->
+        <a href="#" class="btn btn-outline" data-en="Download Resume ↓" data-ko="이력서 다운로드 ↓">Download Resume ↓</a>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2018</div>
+          <div class="timeline-content">
+            <!-- TODO: 2018 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Dummy Title 2018" data-ko="2018 더미 제목">Dummy Title 2018</h3>
+              <p class="timeline-desc"
+                 data-en="Dummy description for 2018. Replace with your actual experience or milestone."
+                 data-ko="2018년 더미 설명입니다. 실제 경험이나 마일스톤으로 교체해주세요.">
+                Dummy description for 2018. Replace with your actual experience or milestone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-content">
+            <!-- TODO: 2019 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Dummy Title 2019" data-ko="2019 더미 제목">Dummy Title 2019</h3>
+              <p class="timeline-desc"
+                 data-en="Dummy description for 2019. Replace with your actual experience or milestone."
+                 data-ko="2019년 더미 설명입니다. 실제 경험이나 마일스톤으로 교체해주세요.">
+                Dummy description for 2019. Replace with your actual experience or milestone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <!-- TODO: 2020 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Dummy Title 2020" data-ko="2020 더미 제목">Dummy Title 2020</h3>
+              <p class="timeline-desc"
+                 data-en="Dummy description for 2020. Replace with your actual experience or milestone."
+                 data-ko="2020년 더미 설명입니다. 실제 경험이나 마일스톤으로 교체해주세요.">
+                Dummy description for 2020. Replace with your actual experience or milestone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-content">
+            <!-- TODO: 2021 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Dummy Title 2021" data-ko="2021 더미 제목">Dummy Title 2021</h3>
+              <p class="timeline-desc"
+                 data-en="Dummy description for 2021. Replace with your actual experience or milestone."
+                 data-ko="2021년 더미 설명입니다. 실제 경험이나 마일스톤으로 교체해주세요.">
+                Dummy description for 2021. Replace with your actual experience or milestone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <!-- TODO: 2022 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Dummy Title 2022" data-ko="2022 더미 제목">Dummy Title 2022</h3>
+              <p class="timeline-desc"
+                 data-en="Dummy description for 2022. Replace with your actual experience or milestone."
+                 data-ko="2022년 더미 설명입니다. 실제 경험이나 마일스톤으로 교체해주세요.">
+                Dummy description for 2022. Replace with your actual experience or milestone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">
+            <!-- TODO: 2023 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Dummy Title 2023" data-ko="2023 더미 제목">Dummy Title 2023</h3>
+              <p class="timeline-desc"
+                 data-en="Dummy description for 2023. Replace with your actual experience or milestone."
+                 data-ko="2023년 더미 설명입니다. 실제 경험이나 마일스톤으로 교체해주세요.">
+                Dummy description for 2023. Replace with your actual experience or milestone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content">
+            <!-- TODO: 2024 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Dummy Title 2024" data-ko="2024 더미 제목">Dummy Title 2024</h3>
+              <p class="timeline-desc"
+                 data-en="Dummy description for 2024. Replace with your actual experience or milestone."
+                 data-ko="2024년 더미 설명입니다. 실제 경험이나 마일스톤으로 교체해주세요.">
+                Dummy description for 2024. Replace with your actual experience or milestone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-content">
+            <!-- TODO: 2025 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Dummy Title 2025" data-ko="2025 더미 제목">Dummy Title 2025</h3>
+              <p class="timeline-desc"
+                 data-en="Dummy description for 2025. Replace with your actual experience or milestone."
+                 data-ko="2025년 더미 설명입니다. 실제 경험이나 마일스톤으로 교체해주세요.">
+                Dummy description for 2025. Replace with your actual experience or milestone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item section-fade">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-content">
+            <!-- TODO: 2026 이미지 교체 -->
+            <div class="timeline-img-wrap">
+              <div class="timeline-img-placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="timeline-text">
+              <h3 class="timeline-title" data-en="Now" data-ko="현재">Now</h3>
+              <p class="timeline-desc"
+                 data-en="Currently open to new opportunities. Let's build something meaningful together."
+                 data-ko="현재 새로운 기회를 찾고 있습니다. 함께 의미 있는 것을 만들어 봐요.">
+                Currently open to new opportunities. Let's build something meaningful together.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.timeline -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER CONTACT ===== -->
+  <footer id="contact" class="footer-contact">
+    <div class="container">
+      <h2 class="footer-headline section-fade"
+          data-en="If you've made it this far, I'd love to say hi"
+          data-ko="여기까지 읽어주셨군요 — 반갑습니다">
+        If you've made it this far, I'd love to say hi
+      </h2>
+      <!-- TODO: 프로필 사진 교체 → <img src="headshot.jpg" alt="Haeji Wi" style="width:140px;height:140px;border-radius:50%;object-fit:cover" /> -->
+      <div class="footer-photo section-fade" aria-hidden="true"></div>
+      <div class="footer-links section-fade">
+        <!-- TODO: 이메일 주소 교체 (mailto:hello@example.com) -->
+        <a href="mailto:hello@example.com" class="footer-link" id="messageLink"
+           data-en="Message" data-ko="메시지">Message</a>
+        <!-- TODO: Instagram 계정명 교체 (instagram.com/your-handle) -->
+        <a href="https://instagram.com/" class="footer-link" target="_blank" rel="noopener noreferrer"
+           data-en="Instagram" data-ko="Instagram">Instagram</a>
+        <!-- TODO: LinkedIn URL 교체 -->
+        <a href="https://linkedin.com/in/" class="footer-link" target="_blank" rel="noopener noreferrer"
+           data-en="LinkedIn" data-ko="LinkedIn">LinkedIn</a>
+      </div>
+      <p class="footer-copy section-fade">© 2025 Haeji Wi</p>
+    </div>
+  </footer>
+
+  <!-- ===== FOOTER NAV ===== -->
+  <div class="footer-nav">
+    <div class="container footer-nav-inner">
+      <a href="#hero"     data-en="Home"       data-ko="홈">Home</a>
+      <a href="#about"    data-en="About Me"   data-ko="소개">About Me</a>
+      <a href="#projects" data-en="Projects"   data-ko="프로젝트">Projects</a>
+      <a href="#resume"   data-en="Resume"     data-ko="이력">Resume</a>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="alert" aria-live="polite">
+    <span id="toastMsg"
+          data-en="Got your message — I'll get back to you soon. Appreciate you reaching out."
+          data-ko="메시지 감사해요 — 곧 연락드릴게요.">
+      Got your message — I'll get back to you soon. Appreciate you reaching out.
+    </span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
